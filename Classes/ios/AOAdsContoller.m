@@ -7,7 +7,7 @@
 //
 
 #import "AOAdsContoller.h"
-#import <Parse/Parse.h>
+#import <Parse.h>
 #import "AOAdsView.h"
 static AOAdsContoller *_contoler = nil;
 
