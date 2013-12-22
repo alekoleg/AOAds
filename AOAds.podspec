@@ -15,5 +15,4 @@ Pod::Spec.new do |s|
 
   s.public_header_files = 'Classes/**/*.h'
   s.frameworks = 'Foundation', 'UIKit', 'QuartzCore', 'CoreGraphics'
-  s.dependency 'Parse-iOS-SDK'
 end
