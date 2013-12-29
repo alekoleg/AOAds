@@ -97,7 +97,7 @@
         _showButton = [[UIButton alloc]initWithFrame:CGRectMake(0, _containerView.frame.size.height - 44, _containerView.frame.size.width, 44)];
         _showButton.backgroundColor = [UIColor colorWithRed:0 green:0.65 blue:1 alpha:1];
         [_showButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [_showButton setTitle:@"Просмотреть" forState:UIControlStateNormal];
+        [_showButton setTitle:@"Просмотр" forState:UIControlStateNormal];
         [_showButton addTarget:self action:@selector(openURL) forControlEvents:UIControlEventTouchUpInside];
         [_containerView addSubview:_showButton];
     }
