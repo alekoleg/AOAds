@@ -7,11 +7,13 @@
 //
 
 #import "AppDelegate.h"
-
+#import "AOAdsContoller.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [Parse setApplicationId:@"nL7C6Z5ZGitHGawXqUefp6prL2r3Vy0y2E32weQY" clientKey:@"hp12dIlFaesQ3LgHflO2huRZv2Ht73LR7HTkGDd9"]; //test
+    [AOAdsContoller checkCompanies];
     // Override point for customization after application launch.
     return YES;
 }

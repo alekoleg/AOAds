@@ -21,6 +21,14 @@
 		B373E978187053B2008C1E7B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B373E95A187053B1008C1E7B /* UIKit.framework */; };
 		B373E980187053B2008C1E7B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B373E97E187053B2008C1E7B /* InfoPlist.strings */; };
 		B373E982187053B2008C1E7B /* AOAdsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B373E981187053B2008C1E7B /* AOAdsTests.m */; };
+		B373E98F187053C5008C1E7B /* AOAdsContoller.m in Sources */ = {isa = PBXBuildFile; fileRef = B373E98C187053C5008C1E7B /* AOAdsContoller.m */; };
+		B373E990187053C5008C1E7B /* AOAdsView.m in Sources */ = {isa = PBXBuildFile; fileRef = B373E98E187053C5008C1E7B /* AOAdsView.m */; };
+		B373E99318705403008C1E7B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B373E99218705403008C1E7B /* Parse.framework */; };
+		B37EB4B5187056D8001E8E39 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B37EB4B4187056D8001E8E39 /* CFNetwork.framework */; };
+		B37EB4B718705713001E8E39 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B37EB4B618705713001E8E39 /* SystemConfiguration.framework */; };
+		B37EB4B91870571E001E8E39 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B37EB4B81870571E001E8E39 /* Accounts.framework */; };
+		B37EB4BB18705786001E8E39 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B37EB4BA18705786001E8E39 /* QuartzCore.framework */; };
+		B37EB4BD18705790001E8E39 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B37EB4BC18705790001E8E39 /* MobileCoreServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +61,16 @@
 		B373E97D187053B2008C1E7B /* AOAdsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AOAdsTests-Info.plist"; sourceTree = "<group>"; };
 		B373E97F187053B2008C1E7B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B373E981187053B2008C1E7B /* AOAdsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AOAdsTests.m; sourceTree = "<group>"; };
+		B373E98B187053C5008C1E7B /* AOAdsContoller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOAdsContoller.h; sourceTree = "<group>"; };
+		B373E98C187053C5008C1E7B /* AOAdsContoller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOAdsContoller.m; sourceTree = "<group>"; };
+		B373E98D187053C5008C1E7B /* AOAdsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOAdsView.h; sourceTree = "<group>"; };
+		B373E98E187053C5008C1E7B /* AOAdsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOAdsView.m; sourceTree = "<group>"; };
+		B373E99218705403008C1E7B /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		B37EB4B4187056D8001E8E39 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		B37EB4B618705713001E8E39 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B37EB4B81870571E001E8E39 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		B37EB4BA18705786001E8E39 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B37EB4BC18705790001E8E39 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +78,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B37EB4BD18705790001E8E39 /* MobileCoreServices.framework in Frameworks */,
+				B37EB4BB18705786001E8E39 /* QuartzCore.framework in Frameworks */,
+				B37EB4B91870571E001E8E39 /* Accounts.framework in Frameworks */,
+				B37EB4B718705713001E8E39 /* SystemConfiguration.framework in Frameworks */,
+				B37EB4B5187056D8001E8E39 /* CFNetwork.framework in Frameworks */,
 				B373E959187053B1008C1E7B /* CoreGraphics.framework in Frameworks */,
 				B373E95B187053B1008C1E7B /* UIKit.framework in Frameworks */,
+				B373E99318705403008C1E7B /* Parse.framework in Frameworks */,
 				B373E957187053B1008C1E7B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,6 +106,7 @@
 		B373E94A187053B1008C1E7B = {
 			isa = PBXGroup;
 			children = (
+				B373E991187053D1008C1E7B /* Clases */,
 				B373E95C187053B1008C1E7B /* AOAds */,
 				B373E97B187053B2008C1E7B /* AOAdsTests */,
 				B373E955187053B1008C1E7B /* Frameworks */,
@@ -101,6 +126,12 @@
 		B373E955187053B1008C1E7B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B37EB4BC18705790001E8E39 /* MobileCoreServices.framework */,
+				B37EB4BA18705786001E8E39 /* QuartzCore.framework */,
+				B37EB4B81870571E001E8E39 /* Accounts.framework */,
+				B37EB4B618705713001E8E39 /* SystemConfiguration.framework */,
+				B37EB4B4187056D8001E8E39 /* CFNetwork.framework */,
+				B373E99218705403008C1E7B /* Parse.framework */,
 				B373E956187053B1008C1E7B /* Foundation.framework */,
 				B373E958187053B1008C1E7B /* CoreGraphics.framework */,
 				B373E95A187053B1008C1E7B /* UIKit.framework */,
@@ -150,6 +181,17 @@
 				B373E97E187053B2008C1E7B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B373E991187053D1008C1E7B /* Clases */ = {
+			isa = PBXGroup;
+			children = (
+				B373E98B187053C5008C1E7B /* AOAdsContoller.h */,
+				B373E98C187053C5008C1E7B /* AOAdsContoller.m */,
+				B373E98D187053C5008C1E7B /* AOAdsView.h */,
+				B373E98E187053C5008C1E7B /* AOAdsView.m */,
+			);
+			name = Clases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,7 +291,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B373E990187053C5008C1E7B /* AOAdsView.m in Sources */,
 				B373E96D187053B1008C1E7B /* ViewController.m in Sources */,
+				B373E98F187053C5008C1E7B /* AOAdsContoller.m in Sources */,
 				B373E967187053B1008C1E7B /* AppDelegate.m in Sources */,
 				B373E963187053B1008C1E7B /* main.m in Sources */,
 			);
@@ -378,6 +422,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Volumes/Macintosh\\ HDD\\ 320/Dropbox/MyProjects/AOFrameworks/AOAds/Project/AOAds",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AOAds/AOAds-Prefix.pch";
 				INFOPLIST_FILE = "AOAds/AOAds-Info.plist";
@@ -391,6 +439,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Volumes/Macintosh\\ HDD\\ 320/Dropbox/MyProjects/AOFrameworks/AOAds/Project/AOAds",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AOAds/AOAds-Prefix.pch";
 				INFOPLIST_FILE = "AOAds/AOAds-Info.plist";
@@ -460,6 +512,7 @@
 				B373E987187053B2008C1E7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B373E988187053B2008C1E7B /* Build configuration list for PBXNativeTarget "AOAdsTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +521,7 @@
 				B373E98A187053B2008C1E7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
