@@ -25,7 +25,7 @@
 @implementation AOAdsView
 
 + (void)showAdsViewWithImages:(NSArray *)images andLink:(NSURL *)url {
-    if (images.count > 0 && url) {
+    if (images.count > 0) {
        AOAdsView *view = [[AOAdsView alloc]initWithImage:images andUrl:url];
         [view show];
     }
@@ -72,7 +72,7 @@
 }
 
 - (void)setupContent {
-    _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 5, _containerView.frame.size.width, _containerView.frame.size.height - 49)];
+    _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 5, _containerView.frame.size.width, _containerView.frame.size.height - 4 - 44 * ([[_url absoluteString]length] > 0))];
     _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width * _images.count, _scrollView.contentSize.height);
     _scrollView.showsHorizontalScrollIndicator = NO;
     _scrollView.showsVerticalScrollIndicator = NO;
@@ -93,12 +93,14 @@
     _hideButton.layer.cornerRadius = 22;
     [_containerView addSubview:_hideButton];
     
-    _showButton = [[UIButton alloc]initWithFrame:CGRectMake(0, _containerView.frame.size.height - 44, _containerView.frame.size.width, 44)];
-    _showButton.backgroundColor = [UIColor colorWithRed:0 green:0.65 blue:1 alpha:1];
-    [_showButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_showButton setTitle:@"Просмотреть" forState:UIControlStateNormal];
-    [_showButton addTarget:self action:@selector(openURL) forControlEvents:UIControlEventTouchUpInside];
-    [_containerView addSubview:_showButton];
+    if (_url) {
+        _showButton = [[UIButton alloc]initWithFrame:CGRectMake(0, _containerView.frame.size.height - 44, _containerView.frame.size.width, 44)];
+        _showButton.backgroundColor = [UIColor colorWithRed:0 green:0.65 blue:1 alpha:1];
+        [_showButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_showButton setTitle:@"Просмотр" forState:UIControlStateNormal];
+        [_showButton addTarget:self action:@selector(openURL) forControlEvents:UIControlEventTouchUpInside];
+        [_containerView addSubview:_showButton];
+    }
 }
 
 - (void)setupImages {

@@ -21,14 +21,14 @@
 		B373E978187053B2008C1E7B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B373E95A187053B1008C1E7B /* UIKit.framework */; };
 		B373E980187053B2008C1E7B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B373E97E187053B2008C1E7B /* InfoPlist.strings */; };
 		B373E982187053B2008C1E7B /* AOAdsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B373E981187053B2008C1E7B /* AOAdsTests.m */; };
-		B373E98F187053C5008C1E7B /* AOAdsContoller.m in Sources */ = {isa = PBXBuildFile; fileRef = B373E98C187053C5008C1E7B /* AOAdsContoller.m */; };
-		B373E990187053C5008C1E7B /* AOAdsView.m in Sources */ = {isa = PBXBuildFile; fileRef = B373E98E187053C5008C1E7B /* AOAdsView.m */; };
 		B373E99318705403008C1E7B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B373E99218705403008C1E7B /* Parse.framework */; };
 		B37EB4B5187056D8001E8E39 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B37EB4B4187056D8001E8E39 /* CFNetwork.framework */; };
 		B37EB4B718705713001E8E39 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B37EB4B618705713001E8E39 /* SystemConfiguration.framework */; };
 		B37EB4B91870571E001E8E39 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B37EB4B81870571E001E8E39 /* Accounts.framework */; };
 		B37EB4BB18705786001E8E39 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B37EB4BA18705786001E8E39 /* QuartzCore.framework */; };
 		B37EB4BD18705790001E8E39 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B37EB4BC18705790001E8E39 /* MobileCoreServices.framework */; };
+		B3E25A5B18706064003C3E7E /* AOAdsContoller.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E25A5818706064003C3E7E /* AOAdsContoller.m */; };
+		B3E25A5C18706064003C3E7E /* AOAdsView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E25A5A18706064003C3E7E /* AOAdsView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,16 +61,16 @@
 		B373E97D187053B2008C1E7B /* AOAdsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AOAdsTests-Info.plist"; sourceTree = "<group>"; };
 		B373E97F187053B2008C1E7B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B373E981187053B2008C1E7B /* AOAdsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AOAdsTests.m; sourceTree = "<group>"; };
-		B373E98B187053C5008C1E7B /* AOAdsContoller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOAdsContoller.h; sourceTree = "<group>"; };
-		B373E98C187053C5008C1E7B /* AOAdsContoller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOAdsContoller.m; sourceTree = "<group>"; };
-		B373E98D187053C5008C1E7B /* AOAdsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOAdsView.h; sourceTree = "<group>"; };
-		B373E98E187053C5008C1E7B /* AOAdsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOAdsView.m; sourceTree = "<group>"; };
 		B373E99218705403008C1E7B /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		B37EB4B4187056D8001E8E39 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B37EB4B618705713001E8E39 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B37EB4B81870571E001E8E39 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		B37EB4BA18705786001E8E39 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B37EB4BC18705790001E8E39 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		B3E25A5718706064003C3E7E /* AOAdsContoller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AOAdsContoller.h; path = ../../Classes/ios/AOAdsContoller.h; sourceTree = "<group>"; };
+		B3E25A5818706064003C3E7E /* AOAdsContoller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AOAdsContoller.m; path = ../../Classes/ios/AOAdsContoller.m; sourceTree = "<group>"; };
+		B3E25A5918706064003C3E7E /* AOAdsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AOAdsView.h; path = ../../Classes/ios/AOAdsView.h; sourceTree = "<group>"; };
+		B3E25A5A18706064003C3E7E /* AOAdsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AOAdsView.m; path = ../../Classes/ios/AOAdsView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,10 +186,10 @@
 		B373E991187053D1008C1E7B /* Clases */ = {
 			isa = PBXGroup;
 			children = (
-				B373E98B187053C5008C1E7B /* AOAdsContoller.h */,
-				B373E98C187053C5008C1E7B /* AOAdsContoller.m */,
-				B373E98D187053C5008C1E7B /* AOAdsView.h */,
-				B373E98E187053C5008C1E7B /* AOAdsView.m */,
+				B3E25A5718706064003C3E7E /* AOAdsContoller.h */,
+				B3E25A5818706064003C3E7E /* AOAdsContoller.m */,
+				B3E25A5918706064003C3E7E /* AOAdsView.h */,
+				B3E25A5A18706064003C3E7E /* AOAdsView.m */,
 			);
 			name = Clases;
 			sourceTree = "<group>";
@@ -291,9 +291,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B373E990187053C5008C1E7B /* AOAdsView.m in Sources */,
+				B3E25A5C18706064003C3E7E /* AOAdsView.m in Sources */,
 				B373E96D187053B1008C1E7B /* ViewController.m in Sources */,
-				B373E98F187053C5008C1E7B /* AOAdsContoller.m in Sources */,
+				B3E25A5B18706064003C3E7E /* AOAdsContoller.m in Sources */,
 				B373E967187053B1008C1E7B /* AppDelegate.m in Sources */,
 				B373E963187053B1008C1E7B /* main.m in Sources */,
 			);

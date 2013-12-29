@@ -8,12 +8,14 @@
 
 #import "AOAdsContoller.h"
 #import <Parse.h>
+//#import <Parse/Parse.h>
 #import "AOAdsView.h"
 static AOAdsContoller *_contoler = nil;
 
 NSString * const kIphoneImages = @"images";
 NSString * const kIpadImages = @"ipadImages";
 NSString * const kPromoteLink = @"PromoteLink";
+NSString * const kDeepLink = @"deepLink";
 NSString * const kShouldPromote = @"shouldPromote";
 NSString * const kObjectId = @"objetcId";
 NSString * const kSavedObjectIds = @"savedObjectId";
@@ -76,6 +78,12 @@ NSString * const kImageThird = @"image3";
 - (void)showCompany:(PFObject *)object {
     NSString *link = [object valueForKey:kPromoteLink];
     NSURL *url = [NSURL URLWithString:link];
+    if ([object valueForKey:kDeepLink]) {
+        NSURL *deepUrl = [NSURL URLWithString:[object valueForKey:kDeepLink]];
+        if ([[UIApplication sharedApplication]canOpenURL:deepUrl]) {
+            url = deepUrl;
+        }
+    }
     PFRelation *relaction = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? [object relationforKey:kIpadImages]:[object relationforKey:kIphoneImages];
     NSError *error = nil;
     PFObject *imageObject = [[relaction query]getFirstObject:&error];
@@ -87,7 +95,7 @@ NSString * const kImageThird = @"image3";
     [self addImageFrom:imageObject[kImageSecond] toArray:images];
     [self addImageFrom:imageObject[kImageThird] toArray:images];
     
-    if (images.count > 0 && url) {
+    if (images.count > 0) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [AOAdsView showAdsViewWithImages:images andLink:url];
         });
