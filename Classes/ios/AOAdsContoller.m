@@ -17,12 +17,13 @@ NSString * const kIpadImages = @"ipadImages";
 NSString * const kPromoteLink = @"PromoteLink";
 NSString * const kDeepLink = @"deepLink";
 NSString * const kShouldPromote = @"shouldPromote";
+NSString * const kShouldShare = @"shouldShare";
 NSString * const kObjectId = @"objetcId";
 NSString * const kSavedObjectIds = @"savedObjectId";
 NSString * const kImageFirst = @"image1";
 NSString * const kImageSecond = @"image2";
 NSString * const kImageThird = @"image3";
-
+NSString * const kTitleForButton = @"buttonTitle";
 @implementation AOAdsContoller {
     dispatch_queue_t _query;
 }
@@ -97,7 +98,11 @@ NSString * const kImageThird = @"image3";
     
     if (images.count > 0) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            [AOAdsView showAdsViewWithImages:images andLink:url];
+           AOAdsView *view = [AOAdsView showAdsViewWithImages:images andLink:url];
+            if ([[object valueForKey:kTitleForButton]length] > 0) {
+                [view.showButton setTitle:[object valueForKey:kTitleForButton] forState:UIControlStateNormal];
+            }
+            view.shouldShare = [[object valueForKey:kShouldShare]boolValue];
         });
 
         NSMutableArray *objectsIds = [[[NSUserDefaults standardUserDefaults]valueForKey:kSavedObjectIds]mutableCopy];

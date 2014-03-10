@@ -11,24 +11,25 @@
 
 
 @interface AOAdsView () <UIScrollViewDelegate> {
-    UIView *_containerView;
-    UIScrollView *_scrollView;
-    UIButton *_showButton;
-    UIButton *_hideButton;
-    UIPageControl *_pageControll;
     NSURL *_url ;
     NSArray *_images;
 }
 
+@property (nonatomic, strong) UIView *containerView;
+@property (nonatomic, strong) UIButton *hideButton;
+@property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) UIPageControl *pageControll;
 @end
 
 @implementation AOAdsView
 
-+ (void)showAdsViewWithImages:(NSArray *)images andLink:(NSURL *)url {
++ (instancetype)showAdsViewWithImages:(NSArray *)images andLink:(NSURL *)url {
     if (images.count > 0) {
        AOAdsView *view = [[AOAdsView alloc]initWithImage:images andUrl:url];
         [view show];
+        return view;
     }
+    return nil;
 }
 
 - (id)initWithImage:(NSArray *)images andUrl:(NSURL *)url {
@@ -139,10 +140,21 @@
 }
 
 - (void)openURL {
-    [[UIApplication sharedApplication]openURL:_url];
-    [self hide ];
+    if (_shouldShare) {
+        UIActivityViewController *vc = [[UIActivityViewController alloc]initWithActivityItems:@[_url] applicationActivities:nil];
+        vc.completionHandler = ^(NSString *type, BOOL result) {
+            [self hide];
+        };
+        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:vc animated:YES completion:NULL];
+    } else  {
+        [[UIApplication sharedApplication]openURL:_url];
+        [self hide];
+    }
 }
 
+//============================================================================================
+#pragma mark - Variables -
+//--------------------------------------------------------------------------------------------
 
 //============================================================================================
 #pragma mark - UIScrollView Delegate -

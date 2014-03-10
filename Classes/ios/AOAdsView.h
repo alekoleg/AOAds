@@ -1,3 +1,4 @@
+
 //
 //  AOAdsView.h
 //  Чтения
@@ -10,6 +11,8 @@
 
 @interface AOAdsView : UIView
 
-+ (void)showAdsViewWithImages:(NSArray *)images andLink:(NSURL *)url;
++ (instancetype)showAdsViewWithImages:(NSArray *)images andLink:(NSURL *)url;
 
+@property (nonatomic, assign) BOOL shouldShare;
+@property (nonatomic, strong) UIButton *showButton;
 @end
