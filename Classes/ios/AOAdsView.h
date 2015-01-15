@@ -15,4 +15,5 @@
 
 @property (nonatomic, assign) BOOL shouldShare;
 @property (nonatomic, strong) UIButton *showButton;
+
 @end

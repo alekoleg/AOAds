@@ -10,29 +10,29 @@
 	<string>AOAds</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>47790DD0-86F0-44E0-BADF-6CD32A968E06</key>
+		<key>1D9B003982BF8E9DFA40B02763185BED01821C02</key>
 		<string>https://github.com/alekoleg/AOAds.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Project/AOAds/AOAds.xcodeproj/project.xcworkspace</string>
+	<string>Project/AOAds/AOAds.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>47790DD0-86F0-44E0-BADF-6CD32A968E06</key>
+		<key>1D9B003982BF8E9DFA40B02763185BED01821C02</key>
 		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/alekoleg/AOAds.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>47790DD0-86F0-44E0-BADF-6CD32A968E06</string>
+	<string>1D9B003982BF8E9DFA40B02763185BED01821C02</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>47790DD0-86F0-44E0-BADF-6CD32A968E06</string>
+			<string>1D9B003982BF8E9DFA40B02763185BED01821C02</string>
 			<key>IDESourceControlWCCName</key>
 			<string>AOAds</string>
 		</dict>

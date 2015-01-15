@@ -7,23 +7,14 @@
 //
 
 #import "AOAdsContoller.h"
-#import <Parse.h>
-//#import <Parse/Parse.h>
 #import "AOAdsView.h"
+#import <AOInfoNetManager.h>
+#import <AOAdsModel.h>
+
 static AOAdsContoller *_contoler = nil;
 
-NSString * const kIphoneImages = @"images";
-NSString * const kIpadImages = @"ipadImages";
-NSString * const kPromoteLink = @"PromoteLink";
-NSString * const kDeepLink = @"deepLink";
-NSString * const kShouldPromote = @"shouldPromote";
-NSString * const kShouldShare = @"shouldShare";
-NSString * const kObjectId = @"objetcId";
 NSString * const kSavedObjectIds = @"savedObjectId";
-NSString * const kImageFirst = @"image1";
-NSString * const kImageSecond = @"image2";
-NSString * const kImageThird = @"image3";
-NSString * const kTitleForButton = @"buttonTitle";
+
 @implementation AOAdsContoller {
     dispatch_queue_t _query;
 }
@@ -59,71 +50,49 @@ NSString * const kTitleForButton = @"buttonTitle";
     
     dispatch_async(_query, ^{
         NSArray *objectsIds = [[NSUserDefaults standardUserDefaults]valueForKey:kSavedObjectIds];
-        
-        PFQuery *query = [[PFQuery alloc]initWithClassName:@"Ads"];
-        [query whereKey:kShouldPromote equalTo:@YES];
-        NSError *error = nil;
-        NSArray *runnigCompanies = [query findObjects:&error];
-        if (error) {
-            NSLog(@"%@", error.description);
-        }
-        [runnigCompanies enumerateObjectsUsingBlock:^(PFObject *obj, NSUInteger idx, BOOL *stop) {
-            if ((objectsIds && ![objectsIds containsObject:obj.objectId]) || !objectsIds) {
-                [self showCompany:obj];
-                return ;
+       
+        [[AOInfoNetManager sharedManager] getAdsWithSuccess:^(NSArray *objects) {
+            for (AOAdsModel *model in objects) {
+                if ((objectsIds && ![objectsIds containsObject:model.objectId]) || !objectsIds) {
+                    [self showCompany:model];
+                    return;
+                }
             }
-        }];
+        } fail:NULL];
     });
 }
 
-- (void)showCompany:(PFObject *)object {
-    NSString *link = [object valueForKey:kPromoteLink];
+- (void)showCompany:(AOAdsModel *)object {
+    
+    NSString *link = object.link;
     NSURL *url = [NSURL URLWithString:link];
-    if ([object valueForKey:kDeepLink]) {
-        NSURL *deepUrl = [NSURL URLWithString:[object valueForKey:kDeepLink]];
+    if (object.schemeLink) {
+        NSURL *deepUrl = [NSURL URLWithString:object.schemeLink];
         if ([[UIApplication sharedApplication]canOpenURL:deepUrl]) {
             url = deepUrl;
         }
     }
-    PFRelation *relaction = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? [object relationforKey:kIpadImages]:[object relationforKey:kIphoneImages];
-    NSError *error = nil;
-    PFObject *imageObject = [[relaction query]getFirstObject:&error];
-    if (error) {
-        NSLog(@"%@", error.description);
-    }
-    NSMutableArray *images = [NSMutableArray array];
-    [self addImageFrom:imageObject[kImageFirst] toArray:images];
-    [self addImageFrom:imageObject[kImageSecond] toArray:images];
-    [self addImageFrom:imageObject[kImageThird] toArray:images];
-    
-    if (images.count > 0) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-           AOAdsView *view = [AOAdsView showAdsViewWithImages:images andLink:url];
-            if ([[object valueForKey:kTitleForButton]length] > 0) {
-                [view.showButton setTitle:[object valueForKey:kTitleForButton] forState:UIControlStateNormal];
+    [[AOInfoNetManager sharedManager] loadImagesFromLinks:object.links success:^(NSArray *images) {
+        if (images.count > 0) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                AOAdsView *view = [AOAdsView showAdsViewWithImages:images andLink:url];
+                if (object.buttonTitle.length > 0) {
+                    [view.showButton setTitle:object.buttonTitle forState:UIControlStateNormal];
+                }
+                view.shouldShare = object.shouldShare.boolValue;
+            });
+            
+            NSMutableArray *objectsIds = [[[NSUserDefaults standardUserDefaults]valueForKey:kSavedObjectIds]mutableCopy];
+            if (!objectsIds) {
+                objectsIds = [NSMutableArray array];
             }
-            view.shouldShare = [[object valueForKey:kShouldShare]boolValue];
-        });
-
-        NSMutableArray *objectsIds = [[[NSUserDefaults standardUserDefaults]valueForKey:kSavedObjectIds]mutableCopy];
-        if (!objectsIds) {
-            objectsIds = [NSMutableArray array];
+            [objectsIds addObject:object.objectId];
+            [[NSUserDefaults standardUserDefaults]setValue:objectsIds forKey:kSavedObjectIds];
+            [[NSUserDefaults standardUserDefaults]synchronize];
         }
-        [objectsIds addObject:object.objectId];
-        [[NSUserDefaults standardUserDefaults]setValue:objectsIds forKey:kSavedObjectIds];
-        [[NSUserDefaults standardUserDefaults]synchronize];
-    }
+    } fail:NULL];
 }
 
-- (void)addImageFrom:(PFFile *)file toArray:(NSMutableArray *)array {
-    if (file) {
-        NSData *data = [file getData];
-        UIImage *image = [UIImage imageWithData:data];
-        if (image) {
-            [array addObject:image];
-        }
-    }
-}
 
 
 @end
