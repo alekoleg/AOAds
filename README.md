@@ -1,5 +1,7 @@
 # AOAds
 
+Load ads from info app
+
 [![Version](http://cocoapod-badges.herokuapp.com/v/AOAds/badge.png)](http://cocoadocs.org/docsets/AOAds)
 [![Platform](http://cocoapod-badges.herokuapp.com/p/AOAds/badge.png)](http://cocoadocs.org/docsets/AOAds)
 
@@ -7,15 +9,15 @@
 
 To run the example project; clone the repo, and run `pod install` from the Project directory first.
 
-## Requirements
-
 ## Installation
 
-AOAds is available through [CocoaPods](http://cocoapods.org), to install
-it simply add the following line to your Podfile:
 
-    pod "AOAds"
+    pod "AOAds", :git => 'https://github.com/alekoleg/AOAds.git'
 
+Because it is private spec, they are not in cocoapods Spec. You must add following lines to your Podfile
+        
+    pod 'AOInfoNetManager', :git => 'https://github.com/alekoleg/AOInfoNetManager'
+    
 ## Author
 
 Oleg Alekseenko, alekoleg@gmail.com
