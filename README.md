@@ -2,9 +2,6 @@
 
 Load ads from info app
 
-[![Version](http://cocoapod-badges.herokuapp.com/v/AOAds/badge.png)](http://cocoadocs.org/docsets/AOAds)
-[![Platform](http://cocoapod-badges.herokuapp.com/p/AOAds/badge.png)](http://cocoadocs.org/docsets/AOAds)
-
 ## Usage
 
 To run the example project; clone the repo, and run `pod install` from the Project directory first.
