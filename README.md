@@ -14,7 +14,8 @@ To run the example project; clone the repo, and run `pod install` from the Proje
 Because it is private spec, they are not in cocoapods Spec. You must add following lines to your Podfile
         
     pod 'AOInfoNetManager', :git => 'https://github.com/alekoleg/AOInfoNetManager'
-    
+
+
 ## Author
 
 Oleg Alekseenko, alekoleg@gmail.com
