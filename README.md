@@ -8,13 +8,8 @@ To run the example project; clone the repo, and run `pod install` from the Proje
 
 ## Installation
 
-
-    pod "AOAds", :git => 'https://github.com/alekoleg/AOAds.git'
-
-Because it is private spec, they are not in cocoapods Spec. You must add following lines to your Podfile
-        
-    pod 'AOInfoNetManager', :git => 'https://github.com/alekoleg/AOInfoNetManager'
-
+	source 'https://github.com/alekoleg/AOSpec.git'
+    pod "AOAds", '~> 0.1.1'
 
 ## Author
 
